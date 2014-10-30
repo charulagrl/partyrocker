@@ -1,0 +1,3 @@
+function centerVertically(){var e=document.querySelectorAll("[data-center-vertically-reference]");for(var t=0;t<e.length;t++){var n=e[t];var r=n.getAttribute("data-center-vertically-reference");var i=0;if(r=="window"){i=window.innerHeight}else if(r=="parent"){i=n.parentNode.offsetHeight}else{i=document.querySelector(r);if(i!=undefined&&i!=false){i=i.offsetHeight}else{i=0}}var s=n.getAttribute("data-center-vertically-minimum");if(!isNaN(parseFloat(s))){s=parseFloat(s)}else{s=0}var o=Math.floor(i/2)-Math.ceil(n.offsetHeight/2);if(o>=s){n.style.marginTop=o+"px"}else{n.style.marginTop=s+"px"}}}
+$(document).ready(function () { centerVertically(); setTimeout(centerVertically,600); });
+$(window).resize(function() { centerVertically(); setTimeout(centerVertically,600); });

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row">
+  <div class="span8">
+    <div class="centered">
+      <h1 class="fascinate-font">Hello, {{ user.firstname }}</h1>
+    </div>
+    <div align="center">
+      {% if user.job_status %}
+        <p> Job is running </p>
+      {% else %}
+        <p> Job is not Running </p>
+      {% endif %}
+      <br/>
+      <br/>
+    	<a href="/token"> Update your profile </a>
+    	<br/>
+    	<a href="/load"> Upload photo </a>
+      <br/>
+      <a href="/toggle"> Toggle job </a>
+    </div>
+    <div>
+  </div>
+</div>
+
+{% endblock %}

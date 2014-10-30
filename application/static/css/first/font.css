@@ -1,0 +1,32 @@
+/* FONT PATH
+ * -------------------------- */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../../font/fontawesome-webfont.eot?v=4.2.0');
+  src: url('../../font/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'),
+		url('../../font/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg'),
+		url('../../font/fontawesome-webfont.woff?v=4.2.0') format('woff'),
+		url('../../font/fontawesome-webfont.ttf?v=4.2.0') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+    font-family: 'amblebold';
+    src: url('../../font/Amble-Bold-webfont.eot');
+    src: url('../../font/Amble-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+            url('../../font/Amble-Bold-webfont.svg#amblebold') format('svg'),
+            url('../../font/Amble-Bold-webfont.woff') format('woff'),
+            url('../../font/Amble-Bold-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ambleregular';
+    src: url('../../font/Amble-Regular-webfont.eot');
+    src: url('../../font/Amble-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+            url('../../font/Amble-Regular-webfont.svg#ambleregular') format('svg'),
+            url('../../font/Amble-Regular-webfont.woff') format('woff'),
+            url('../../font/Amble-Regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

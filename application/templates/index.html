@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- jinja title -->
+		{% if title %}
+			<title>{{title}}</title>
+		{% else %}
+			<title>Partyork</title>
+		{% endif %}
+		<!-- include head -->
+		{% include 'head.html' %}
+		<!-- page specific -->
+		<link rel="stylesheet" type="text/css" href="/static/css/page/index.css">
+	</head>
+	<body>
+		<!-- background -->
+		<div class="bg"></div>
+		<!-- overlay for modal box -->
+		<div class="modal-overlay hidden animated fadeOut"></div>
+		
+		<!-- top left logo -->
+		<img alt="Partyork" class="logo o60" src="/static/img/logos/logo.svg"/>
+		
+		<!-- top right login and sharing -->
+		<div class="top-right grid">
+			<div class="row-480">
+				<div class="span-4-5">
+					<a class="bb-0 block w100 border-box pr15 text-right" href="javascript:void(0)">Login</a>
+				</div>
+				<div class="span-4-5">
+					<div class="fb-like" data-href="https://www.facebook.com/Partyork1" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+				</div>
+				<div class="span-4-5">
+					<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://twitter.com/partyork">Tweet</a>
+				</div>
+				<div class="span-4-5">
+					<div class="g-plus" data-action="share" data-annotation="bubble"></div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- actual page content -->
+		<div class="content block-center" data-center-vertically-reference="window" data-center-vertically-minimum="150">
+			<h1 class="w100 text-center title-3xl font-bold o60">Don't be alone in a club or a bar</h1>
+			<div class="divider mt25 mb25 block-center"></div>
+			<div class="grid">
+				<div class="row-">
+					<div class="span-2-0">
+						<button class="button-empty w85 block-left">BECOME A PARTYORKER</button>
+					</div>
+					<div class="span-2-0">
+						<button class="button-empty w85 block-right">WHO IS PARTYING</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- who -->
+		<div class="who hidden animated fadeOut">
+			<div class="toggle-button-35 toggle-button-black">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<div class="aside">
+				<div class="content">
+					<ul>
+						<li>
+							<div class="icon fa fa-glass"></div>
+							<div class="label">
+								<span class="block-left">Bar</span>
+								<span class="block-right">6 going</span>
+							</div>
+						</li>
+						<li>
+							<div class="icon fa fa-glass"></div>
+							<div class="label">
+								<span class="block-left">Bar 1</span>
+								<span class="block-right">6 going</span>
+							</div>
+						</li>
+						<li>
+							<div class="icon fa fa-glass"></div>
+							<div class="label">
+								<span class="block-left">Bar 2</span>
+								<span class="block-right">12 going</span>
+							</div>
+						</li>
+						<li>
+							<div class="icon fa fa-glass"></div>
+							<div class="label">
+								<span class="block-left">Bar 3</span>
+								<span class="block-right">6 going</span>
+							</div>
+						</li>
+						<li>
+							<button class="button">Become a partyorker</button>
+						</li>
+						<li>
+							<button class="button">Back</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="map"></div>
+		</div>
+		
+		
+		<!-- modal boxes -->
+		<div class="modal-box zip transition mb25 hidden animated fadeOut" data-center-vertically-reference="window" data-center-vertically-minimum="25">
+			<div class="item dark auto">
+				<p class="label">Enter ZIP code to continue</p>
+			</div>
+			<div class="error hidden auto animated bounceIn">
+				<div class="icon fa fa-exclamation-circle"></div>
+				<div class="label">Enter a valid ZIP code</div>
+			</div>
+			<div class="autocomplete">
+			
+			</div>
+			<div class="item clickable dark">
+				<button class="button">Go</button>
+			</div>
+			<div class="divider light"></div>
+			<div class="item clickable dark">
+				<button class="button">Back</button>
+			</div>
+		</div>
+		
+		<div class="modal-box login transition mb25 hidden animated fadeOut" data-center-vertically-reference="window" data-center-vertically-minimum="25">
+			<div class="item clickable facebook">
+				<div class="icon fa fa-facebook"></div>
+				<div class="label">Log in with Facebook</div>
+			</div>
+			<div class="item clickable google">
+				<div class="icon fa fa-google-plus"></div>
+				<div class="label">Log in with Google+</div>
+			</div>
+			<!-- error box -->
+			<form action="/login" method="POST">
+			<div class="error hidden auto animated bounceIn">
+				<div class="icon fa fa-envelope-o"></div>
+				<div class="label">Enter your email address</div>
+			</div>
+			<!-- email input -->
+			<div class="item light">
+				<input class="input" name="email" type="email" placeholder="Email address"/>
+			</div>
+			<!-- divider line between inputs -->
+			<div class="divider dark"></div>
+			<!-- error box -->
+			<div class="error hidden auto animated bounceIn">
+				<div class="icon fa fa-exclamation-circle"></div>
+				<div class="label">Enter your password</div>
+			</div>
+			<div class="item light">
+				<input class="input" name="password" type="password" placeholder="Password"/>
+			</div>
+			<div class="item clickable dark">
+				<button class="button" type="submit">Log in</button>
+			</div>
+			<div class="divider light"></div>
+			<div class="item clickable dark">
+				<button class="button">Back</button>
+			</div>
+			</form>
+		</div>
+
+
+		<div class="modal-box signup transition mb25 hidden animated fadeOut" data-center-vertically-reference="window" data-center-vertically-minimum="25">
+			<div class="item clickable facebook">
+				<div class="icon fa fa-facebook"></div>
+				<div class="label">Log in with Facebook</div>
+			</div>
+			<div class="item clickable google">
+				<div class="icon fa fa-google-plus"></div>
+				<div class="label">Log in with Google+</div>
+			</div>
+			
+			<div class="error hidden auto animated bounceIn">
+				<div class="icon fa fa-exclamation-circle"></div>
+				<div class="label">Enter your name</div>
+			</div>
+		<form action="/register" method="POST">
+			<div class="item light grid">
+				<div class="row-">
+					<div class="span-2-0">
+						<input class="input" name="firstname" type="text" placeholder="First name"/>
+					</div>
+					<div class="span-2-0">
+						<input class="input" name="lastname" type="text" placeholder="Last name"/>
+					</div>
+				</div>
+			</div>
+
+			<div class="divider dark"></div>
+			
+			<div class="error hidden auto animated bounceIn">
+				<div class="icon fa fa-exclamation-circle"></div>
+				<div class="label">Enter your email address</div>
+			</div>
+			<div class="item light">
+				<input class="input" name="email" type="email" placeholder="Email address"/>
+			</div>
+			
+			<div class="divider dark"></div>
+			
+			<div class="error hidden auto animated bounceIn">
+				<div class="icon fa fa-exclamation-"></div>
+				<div class="label">Enter your password</div>
+			</div>
+			<div class="item light">
+				<input class="input" name="password" type="password" placeholder="Password"/>
+			</div>
+			
+			<div class="divider dark"></div>
+			
+			<div class="error hidden auto animated bounceIn">
+				<div class="icon fa fa-exclamation-circle"></div>
+				<div class="label">Enter a valid ZIP code</div>
+			</div>
+			<div class="item light">
+				<input class="input" name="zipcode" type="text" placeholder="ZIP code"/>
+			</div>
+			<!--<div class="autocomplete">
+			
+			</div>-->
+			
+			<div class="item dark auto">
+				<p class="label o60 small">When you create an account, you automatically agree to all the terms in our terms and conditions, our privacy policy and our cookie policy</p>
+			</div>
+			<div class="divider light"></div>
+			<div class="item clickable dark">
+				<button class="button" type='submit'>Sign up</button>
+			</div>
+			<div class="divider light"></div>
+			<div class="item clickable dark">
+				<button class="button">Back</button>
+			</div>
+		</form>
+		</div>
+		
+		
+		<!-- social -->
+		<!-- facebook -->
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1503061683259237&version=v2.0";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		<!--twitter-->
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		<!-- google plus -->
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+		<!-- google maps API -->
+		<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyBoxDogMBUvTnMm25EpM4MlvaquMKEROi0"></script>
+		
+		<!-- page specific js -->
+		<script type="text/javascript" src="/static/js/page/index.js"></script>
+	</body>
+</html>

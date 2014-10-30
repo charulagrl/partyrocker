@@ -1,0 +1,214 @@
+/**/
+.bg {
+	position:fixed;
+	z-index:0;
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	background-image:url('../../img/index/bg.jpg');
+	/*background-image:url('../../img/index/bg-drink.jpg');*/
+	background-size:cover;
+	background-position:center;
+}
+.logo {
+	position:absolute;
+	top:40px;
+	left:40px;
+	width:6.6%;
+	height:auto;
+	max-width:128px;
+	min-width:48px;
+	-webkit-transition:top 0.3s, width 0.2s, left 0.3s;
+	-moz-transition:top 0.3s, width 0.2s, left 0.3s;
+	-ms-transition:top 0.3s, width 0.2s, left 0.3s;
+	-o-transition:top 0.3s, width 0.2s, left 0.3s;
+	transition:top 0.3s, width 0.2s, left 0.3s;
+}
+@media all and (max-width:720px) {
+	.logo {
+		top:20px;
+		left:20px;
+	}
+}
+@media all and (max-height:480px) {
+	.logo {
+		top:20px;
+		left:20px;
+	}
+}
+.top-right {
+	position:absolute;
+	top:40px;
+	right:40px;
+	width:375px;
+	-webkit-transition:width 0.3s, top 0.3s, right 0.3s;
+	-moz-transition:width 0.3s, top 0.3s, right 0.3s;
+	-ms-transition:width 0.3s, top 0.3s, right 0.3s;
+	-o-transition:width 0.3s, top 0.3s, right 0.3s;
+	transition:width 0.3s, top 0.3s, right 0.3s;
+}
+@media all and (max-width:480px) {
+	.top-right {
+		width:100px;
+	}
+	.top-right a.bb-0.block.w100 {
+		text-align:left;
+	}
+}
+@media all and (max-width:720px) {
+	.top-right {
+		top:20px;
+		right:20px;
+	}
+}
+@media all and (max-height:480px) {
+	.top-right {
+		top:20px;
+		right:20px;
+	}
+}
+.content {
+	position:relative;
+	z-index:1;
+	display:block;
+	width:calc(100% / 2.35);
+	max-width:650px;
+	-webkit-transition:margin 0.3s, width 0.2s;
+	-moz-transition:margin 0.3s, width 0.2s;
+	-ms-transition:margin 0.3s, width 0.2s;
+	-o-transition:margin 0.3s, width 0.2s;
+	transition:margin 0.3s, width 0.2s;
+}
+.content .divider {
+	display:block;
+	width:75%;
+	background:#ffffff;
+	opacity:0.3;
+	height:2px;
+}
+.content button {
+	font-size:18px;
+}
+.content button.block-left {
+	margin-left:10%;
+}
+.content button.block-right {
+	margin-right:10%;
+}
+@media all and (max-width:1300px) {
+	.content {
+		width:calc(100% / 1.5);
+	}
+}
+@media all and (max-width:1024px) {
+	.content {
+		width:calc(100% / 1.1);
+	}
+}
+@media all and (max-width:640px) {
+	.content button {
+		font-size:14px;
+	}
+}
+@media all and (max-width:380px) {
+	.content h1 {
+		font-size:34px;
+	}
+}
+
+.who {
+	position:fixed;
+	top:0px;
+	left:0px;
+	bottom:0px;
+	right:0px;
+	width:100%;
+	height:100%;
+	z-index:10;
+}
+.who .map {
+	position:absolute;
+	top:0px;
+	left:0px;
+	bottom:0px;
+	right:0px;
+	width:100%;
+	height:100%;
+}
+.who .toggle-button-35 {
+	position:absolute;
+	top:20px;
+	right:20px;
+	z-index:5;
+}
+.who .aside {
+	position:absolute;
+	top:0px;
+	bottom:0px;
+	z-index:3;
+	width:300px;
+	right:-400px;
+	background:rgba(95,205,131,0.8);
+	-webkit-transition:right 0.3s, width 0.3s;
+	-moz-transition:right 0.3s, width 0.3s;
+	-ms-transition:right 0.3s, width 0.3s;
+	-o-transition:right 0.3s, width 0.3s;
+	transition:right 0.3s, width 0.3s;
+}
+.who .aside.open {
+	right:0px;
+}
+.who .aside .content {
+	width:100%;
+	margin-top:75px;
+}
+.who .aside .content ul {
+	width:100%;
+}
+.who .aside .content ul li:first-child {
+	border-top:1px solid rgba(255,255,255,0.3);
+}
+.who .aside .content ul li {
+	width:100%;
+	height:40px;
+	border-bottom:1px solid rgba(255,255,255,0.4);
+	opacity:0.8;
+}
+.who .aside .content ul li .icon {
+	float:left;
+	display:block;
+	font-size:22px;
+	line-height:40px;
+	width:40px;
+	text-align:center;
+}
+.who .aside .content ul li .icon + .label {
+	float:left;
+	display:block;
+	font-size:16px;
+	line-height:40px;
+	text-align:center;
+	width:calc(100% - 50px);
+}
+.who .aside .content ul li .button {
+	background:#52c26e;
+	line-height:40px;
+	width:100%;
+	height:100%;
+	text-align:center;
+	opacity:0.6;
+	-webkit-transition:opacity 0.3s;
+	-moz-transition:opacity 0.3s;
+	-ms-transition:opacity 0.3s;
+	-o-transition:opacity 0.3s;
+	transition:opacity 0.3s;
+}
+.who .aside .content ul li .button:hover {
+	opacity:1;
+}
+@media all and (max-width:360px) {
+	.who .aside {
+		width:100%;
+	}
+}

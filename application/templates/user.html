@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+ 		<!-- jinja title -->
+		{% if title %}
+			<title>{{title}}</title>
+		{% else %}
+			<title>Partyork</title>
+		{% endif %}
+		<!-- include head -->
+		{% include 'head.html' %}
+		<!-- page specific -->
+		<link rel="stylesheet" type="text/css" href="/static/css/page/user.css">
+	</head>
+	<body>
+		<div class="top-bar">
+			<img alt="Partyork" class="logo" src="/static/img/logos/logo.svg" data-center-vertically-reference="parent" data-center-vertically-minimum="20" />
+			<h1 class="block block-right text-center title-m" data-center-vertically-reference="parent" >Showing partyorkers in [PLACE] </h1>
+		</div>
+		
+		<div class="container">
+			<div class="toggle-button-35 not-selectable toggle-button-black"><div></div><div></div><div></div></div>
+			<!-- profile aside -->
+			<div class="aside left user">
+				<div class="scroll">
+					<div class="content">
+						<div class="pic radius-full">
+							<button class="button">Change</button>
+						</div>
+						<input class="input mt30" type="text" value="ST PETERSBURG"/>
+						<div class="grid mt30">
+							<div class="row-">
+								<div class="span-2-0 divide">
+									<input class="input" type="text" value="First"/>
+								</div>
+								<div class="span-2-0">
+									<input class="input" type="text" value="Last"/>
+								</div>
+							</div>
+						</div>
+						<button class="button mt30">How will others see me?</button>
+						<button class="button mt30">Messages</button>
+						<button class="button mt30">Partylog</button>
+						<button class="button mt30 mb30">Exit</button>
+						<br><br><br><br>
+					</div>
+				</div>
+			</div>
+			<div class="map"></div>
+			<!-- parties aside -->
+			<div class="aside right parties">
+				<div class="scroll">
+					<div class="content">
+						<div class="title divide">
+							<p class="w100 block text-center">Select a date</p>
+						</div>
+						<div class="grid">
+							<div class="row-">
+								<div class="span-3-0 divide">
+									<select class="input">
+										<option value="0">M</option>
+									</select>
+								</div>
+								<div class="span-3-0 divide">
+									<select class="input">
+										<option value="0">D</option>
+									</select>
+								</div>
+								<div class="span-3-0">
+									<select class="input">
+										<option value="0">Y</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="party">
+							<button class="check"><span class="fa fa-check"></span></button>
+							<p class="party-title">
+								<span>A bar</span>
+								<span>6</span>
+							</p>
+							<div class="grid time">
+								<div class="row-">
+									<div class="span-2-0">
+										<select class="input">
+											<option value="22">22</option>
+										</select>
+									</div>
+									<div class="span-2-0">
+										<select class="input">
+											<option value="45">45</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="party">
+							<button class="check"><span class="fa fa-check"></span></button>
+							<p class="party-title">
+								<span>Vue 19</span>
+								<span>12</span>
+							</p>
+							<div class="grid time">
+								<div class="row-">
+									<div class="span-2-0">
+										<select class="input">
+											<option value="23">23</option>
+										</select>
+									</div>
+									<div class="span-2-0">
+										<select class="input">
+											<option value="45">45</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="party">
+							<button class="check"><span class="fa fa-check"></span></button>
+							<p class="party-title">
+								<span>Cheviche</span>
+								<span>123</span>
+							</p>
+							<div class="grid time">
+								<div class="row-">
+									<div class="span-2-0">
+										<select class="input">
+											<option value="23">23</option>
+										</select>
+									</div>
+									<div class="span-2-0">
+										<select class="input">
+											<option value="45">45</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="toggle-button-35 not-selectable toggle-button-black"><div></div><div></div><div></div></div>
+		</div>
+		
+		<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyBoxDogMBUvTnMm25EpM4MlvaquMKEROi0"></script>
+		<script type="text/javascript" src="/static/js/page/user.js"></script>
+	</body>
+</html>

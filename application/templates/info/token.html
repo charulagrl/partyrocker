@@ -2,13 +2,17 @@
 {% block content %}
 {% from "info/_formhelper.html" import render_field %}
   <div align="center">
-    <form method=post action="/token">
+    <form method=post action="/update">
       <dl>
+        {{ render_field(form.firstname) }}
+        {{ render_field(form.lastname) }}
+        {{ render_field(form.password) }}
+        {{ render_field(form.zipcode) }}
+        {{ render_field(form.description) }}
         {{ render_field(form.twitter_handle) }}
-        {{ render_field(form.auth_token) }}
-        {{ render_field(form.auth_secret) }}
-        {{ render_field(form.consumer_key) }}
-        {{ render_field(form.consumer_secret) }}
+        {{ render_field(form.date_of_birth) }}
+        {{ render_field(form.gender) }}
+        {{ render_field(form.relationship_status) }}
       </dl>
       <p><input type=submit value=Save>
     </form>

@@ -1,5 +1,5 @@
 from application import db
-
+import datetime
 #
 #Create your own models here and they will be imported automaticaly. or
 #use a model per blueprint.
@@ -12,12 +12,11 @@ class User(db.Model):
     email = db.Column(db.String(80), unique=True)
     password = db.Column(db.String(80))
     zipcode = db.Column(db.Integer)
-    auth_token = db.Column(db.String(80), nullable=False)
-    auth_secret = db.Column(db.String(80), nullable=False)
-    consumer_key = db.Column(db.String(80), nullable=False)
-    consumer_secret = db.Column(db.String(80), nullable=False)
+    description = db.Column(db.String(120), nullable=False)
     twitter_handle = db.Column(db.String(80), nullable=False)
-    job_status = db.Column(db.Boolean(), unique=False, default=True)
+    date_of_birth = db.Column(db.Date, nullable=False)
+    gender = db.Column(db.String(80), nullable=False)
+    relationship_status = db.Column(db.String(), nullable=False)
 
     def __init__(self, firstname, lastname, email, password, zipcode):
         self.firstname = firstname
@@ -25,12 +24,11 @@ class User(db.Model):
         self.email = email
         self.password = password
         self.zipcode = zipcode
-        self.auth_token = ''
-        self.auth_secret = ''
-        self.consumer_key = ''
-        self.consumer_secret = ''
+        self.description = ''
         self.twitter_handle = ''
-        self.job_status = False
+        self.date_of_birth = datetime.date.today()
+        self.gender = ''
+        self.relationship_status = ''
 
     def set_password(self, password):
         self.password = password

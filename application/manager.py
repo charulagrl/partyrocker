@@ -114,20 +114,37 @@ def uploaded_file(filename):
     return send_from_directory('/Users/charul/Downloads/partyork-web/uploads',
                                filename)
 
-@app.route('/token', methods=['GET', 'POST'])
+@app.route('/update', methods=['GET', 'POST'])
 @login_required
-def token():
-    form = TokenForm(request.form)
-    user = User.query.filter_by(username=current_user.username).first()
+def update():
+    form = UpdateForm(request.form)
+    user = User.query.filter_by(email=current_user.email).first()
     if request.method == 'POST' and form.validate():
-        user.twitter_handle = form.twitter_handle.data
-        user.auth_token = form.auth_token.data
-        user.auth_secret = form.auth_secret.data
-        user.consumer_key = form.consumer_key.data
-        user.consumer_secret = form.consumer_secret.data
+        user.firstname = form.firstname.data
+        user.lastname = form.lastname.data
+        user.password = form.password.data
+        user.zipcode = form.zipcode.data
+        user.description = form.description.data
+        user.twitter_handle = form.twitter_handle.data 
+        user.date_of_birth = form.date_of_birth.data
+        user.gender = form.gender.data
+        user.relationship_status = form.relationship_status.data
+
+        db.session.add(user)
         db.session.commit()
-        flash('Successfully added the token')
-        return redirect(url_for("index"))
+        flash('Successfully added the user')
+        return redirect(url_for('home'))
+
+    form.firstname.data = user.firstname
+    form.lastname.data = user.lastname
+    form.password.data = user.password
+    form.zipcode.data = user.zipcode
+    form.description.data = user.description
+    form.twitter_handle.data = user.twitter_handle
+    form.date_of_birth.data = user.date_of_birth
+    form.gender.data = user.gender
+    form.relationship_status.data = user.relationship_status
+
     return render_template('info/token.html', form=form)
 
 @app.route('/hashtag', methods=['GET', 'POST'])

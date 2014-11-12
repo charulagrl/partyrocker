@@ -1,4 +1,4 @@
-from wtforms import Form, TextField, BooleanField, PasswordField, DateField, IntegerField, PasswordField, TextAreaField, validators, SubmitField
+from wtforms import Form, TextField, SelectField, BooleanField, PasswordField, RadioField, DateField, IntegerField, PasswordField, TextAreaField, validators, SubmitField
 from application.models import User
 from flask.ext.login import login_user
 
@@ -21,8 +21,8 @@ class UpdateForm(Form):
     description = TextField('Description', validators=[validators.Required()])
     twitter_handle = TextField('Twitter Handle', validators=[validators.Required()])
     date_of_birth = DateField('Date of Birth (mm/dd/yyyy)',validators=[validators.required()],format='%m/%d/%Y')
-    gender = TextField('Gender', validators=[validators.Required()])
-    relationship_status = TextField('Relationship Status', validators=[validators.Required()])
+    gender = RadioField('Gender', validators=[validators.Required()], choices=[('MALE', 'male'), ('FEMALE', 'female')])
+    relationship_status = SelectField('Relationship Status', choices=[('SINGLE', 'Single'), ('MARRIED', 'Married'), ('COMPLICATED', 'Complicated'), ('COMMITTED', 'Committed')])
 
 class HashTagForm(Form):
     hashtag = TextField('Hash Tags', validators=[validators.Required()])

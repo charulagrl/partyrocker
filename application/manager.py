@@ -132,7 +132,7 @@ def update():
 
         db.session.add(user)
         db.session.commit()
-        flash('Successfully added the user')
+        flash('Successfully updated user information')
         return redirect(url_for('home'))
 
     form.firstname.data = user.firstname

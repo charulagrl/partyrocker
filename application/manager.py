@@ -111,7 +111,7 @@ def upload():
 # an image, that image is going to be show after the upload
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
-    return send_from_directory('/Users/charul/Downloads/partyork-web/uploads',
+    return send_from_directory(os.path.abspath(app.config['UPLOAD_FOLDER']),
                                filename)
 
 @app.route('/update', methods=['GET', 'POST'])

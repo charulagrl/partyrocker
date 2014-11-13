@@ -70,7 +70,7 @@ def login():
 @app.route('/user')
 def user():
     if current_user.is_authenticated():
-        return redirect(url_for("home", username=current_user.username))
+        return redirect(url_for("home", username=current_user.firstname))
     else:
         return render_template('info/hello.html', title="Hi Guest!" , user=g.user)
 
